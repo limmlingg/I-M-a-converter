@@ -1,0 +1,15 @@
+{
+	"name": "Fahrenheit to Celsius",
+	"version": "1.0",
+	"description": "Automatically converts all degrees Fahrenheit text to degrees Celsius when hovering over it",
+	"permissions": ["storage"],
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": ["conversion.js"]
+		}
+	],
+	"manifest_version": 2
+}
