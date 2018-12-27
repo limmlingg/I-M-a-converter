@@ -8,7 +8,10 @@
 			"matches": [
 				"<all_urls>"
 			],
-			"js": ["conversion.js"]
+			"js": [
+				"temperature-conversion.js",
+				"conversion.js"
+			]
 		}
 	],
 	"manifest_version": 2

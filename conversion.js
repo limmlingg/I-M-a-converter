@@ -5,9 +5,9 @@
 // 	})
 // });
 
-addFahrenheitTitles();
-
 var pageText;
+
+addFahrenheitTitles();
 
 // Get the entire text of the webpage
 function getText() {
@@ -69,21 +69,13 @@ function extractFahrenheitNum(str) {
 	}
 }
 
-function fahrenheitToCelsius(fahrenheit) {
-	var celsius = parseFloat((fahrenheit - 32) * 5.0/9.0);
-
-	if (isNaN(celsius)) {
-		console.log("Error: non numeric celsius calculated for " + fahrenheit + " fahrenheit. Celcius = " + celsius);
-		return null;
-	} else {
-		return celsius;
-	}
-}
-
+// Returns the titles for temperature conversions
 function makeFahrenheitTitle(fahrenheit, celsius) {
-	return String(fahrenheit) + "°F = " + String(celsius.toFixed(2)) + "°C"
+	return String(fahrenheit.toFixed(2)) + "°F = " + String(celsius.toFixed(2)) + "°C"
 }
 
+// Replace the original text in the webpage's HTML to underline the original text and display the given title when hovered over
+// TODO: Fix all the bugs :(
 function setTitle(original, title) {
 
 	//console.log(title);
