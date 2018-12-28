@@ -7,7 +7,8 @@
 
 var pageText;
 
-addFahrenheitTitles();
+addTemperatureTitles();
+
 
 // Get the entire text of the webpage
 function getText() {
@@ -15,17 +16,20 @@ function getText() {
 	//console.log(pageText);
 }
 
-// Look through the entire text of the webpage and add title attributes with the celcius units
-// In the future, if extending this plugin, each unit conversion should have its own method
+// Add title attributes for temperatures in fahrenheit and celsius
+function addTemperatureTitles() {
+	addFahrenheitTitles();
+	addCelsiusTitles();
+
+	// No implementation (yet) for Kelvin as it is difficult to figure out whether a number with a 'K' unit is referring to Kelvin or thousands.
+}
+
+// Look through the entire text of the webpage and add title attributes with other temperature units
 function addFahrenheitTitles() {
 	getText();
 	// Search for an optional negate sign, at least 1 digit, an optional space and at least one digit after, an optional space, and the fahrenheit unit
 	// /g to search for all matches
 	var matches = pageText.match(/[−|-]?\d+(\.\d+)?[\s]?°F/g);
-
-	// if (matches == null) {
-	// 	console.log("didn't find anything");
-	// }
 
 	// Remove all duplicates so that replacing the text in setTitle() will not cause multiple spans for a duplicate
 	matches = Array.from(new Set(matches));
@@ -34,17 +38,46 @@ function addFahrenheitTitles() {
 		//console.log("match " + i + ": " + matches[i]);
 
 		var occurrence = matches[i];
-		var fahrenheit = extractFahrenheitNum(occurrence);
+		var fahrenheit = extractTemperatureNum(occurrence);
 
 		if (fahrenheit != null) {
 			var celsius = fahrenheitToCelsius(fahrenheit);
-			setTitle(occurrence, makeFahrenheitTitle(fahrenheit, celsius));
+			var kelvin = fahrenheitToKelvin(fahrenheit);
+			setTitle(occurrence, makeTemperatureTitle(fahrenheit, celsius, kelvin));
 		}
 	}
 }
 
-// Given a string with 1 fahrenheit value (including units), returns the number 
-function extractFahrenheitNum(str) {
+// Look through the entire text of the webpage and add title attributes with other temperature units
+function addCelsiusTitles() {
+	getText();
+	// Search for an optional negate sign, at least 1 digit, an optional space and at least one digit after, an optional space, and the celsius unit
+	// /g to search for all matches
+	var matches = pageText.match(/[−|-]?\d+(\.\d+)?[\s]?°C/g);
+
+	// Remove all duplicates so that replacing the text in setTitle() will not cause multiple spans for a duplicate
+	matches = Array.from(new Set(matches));
+
+	for (var i = 0; i < matches.length; i++) {
+
+		//console.log("match " + i + ": " + matches[i]);
+
+		var occurrence = matches[i];
+		var celsius = extractTemperatureNum(occurrence);
+
+		if (celsius != null) {
+			var fahrenheit = celsiusToFahrenheit(celsius);
+			var kelvin = celsiusToKelvin(celsius);
+			setTitle(occurrence, makeTemperatureTitle(fahrenheit, celsius, kelvin));
+
+			//console.log("fah = " + fahrenheit);
+			//console.log("fah = " + kelvin);
+		}
+	}
+}
+
+// Given a string with 1 temperature value (including units), returns the number 
+function extractTemperatureNum(str) {
 	var num = str.match(/[−|-]?\d+(\.\d+)?/g);
 
 	if (num == null) {
@@ -70,8 +103,8 @@ function extractFahrenheitNum(str) {
 }
 
 // Returns the titles for temperature conversions
-function makeFahrenheitTitle(fahrenheit, celsius) {
-	return String(fahrenheit.toFixed(2)) + "°F = " + String(celsius.toFixed(2)) + "°C"
+function makeTemperatureTitle(fahrenheit, celsius, kelvin) {
+	return String(fahrenheit.toFixed(2)) + "°F = " + String(celsius.toFixed(2)) + "°C = " + String(kelvin.toFixed(2)) + "K";
 }
 
 // Replace the original text in the webpage's HTML to underline the original text and display the given title when hovered over

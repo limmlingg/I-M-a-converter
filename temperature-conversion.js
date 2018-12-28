@@ -7,18 +7,18 @@
 // --------------------------------------------------------------------|
 
 function celsiusToFahrenheit(celsius) {
-	var fahrenheit = parseFloat((celsius - 32) * 5.0/9.0);
+	var fahrenheit = parseFloat((celsius * 9.0/5.0) + 32);
 
 	if (isNaN(fahrenheit)) {
 		console.log("Error: non numeric fahrenheit calculated for " + celsius + " celsius. Calculated value = " + fahrenheit);
 		return null;
 	} else {
-		return celsius;
+		return fahrenheit;
 	}
 }
 
 function celsiusToKelvin(celsius) {
-	var kelvin = parseFloat(celsius - 273.15);
+	var kelvin = parseFloat(celsius + 273.15);
 
 	if (isNaN(kelvin)) {
 		console.log("Error: non numeric kelvin calculated for " + celsius + " celsius. Calculated value = " + kelvin);
