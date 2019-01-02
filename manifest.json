@@ -10,6 +10,7 @@
 			],
 			"js": [
 				"temperature-conversion.js",
+				"length-conversion.js",
 				"conversion.js"
 			]
 		}
