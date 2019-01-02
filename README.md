@@ -17,7 +17,7 @@ A chrome extension that automatically converts imperial units to metric and vice
   
 ### Nice-to-Haves
 * Some NLP to easily recognise units (likely using an NLP library), for example
-  * 30 °F
+  * <f2ctag style="border-bottom: 2px solid #fea" title="30.00°F = -1.11°C = 272.04K"> 30 °F</f2ctag>
   * thirty degrees fahrenheit
   * fahrenheit 30
   * 30° Fahrenheit
@@ -28,6 +28,7 @@ A chrome extension that automatically converts imperial units to metric and vice
   * only convert temperature and length
   * only convert to kg
   * only convert from metric to imperial
+  * number of decimal places for each unit
   * change css styling of a translated number (text decoration, colour etc.)
 
 ## Release
