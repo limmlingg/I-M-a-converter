@@ -13,9 +13,9 @@ This little thing automatically converts measurements into commonly used units s
 **NOTE**: This Chrome extension is still under development so there is no official release yet. However, here's how to download this very rudimentary version.
 
 1. Download the files from this repository as a ZIP file.
-  1. Going to the [main page](https://github.com/limmlingg/Unit-Translator) of the repo.
-  2. Click the green `Clone or download` button
-  3. Click `Download ZIP`.
+   1. Going to the [main page](https://github.com/limmlingg/Unit-Translator) of the repo.
+   2. Click the green `Clone or download` button.
+   3. Click `Download ZIP`.
 2. Using Google Chrome, go to the address bar and type `chrome://extension`.
 3. Activate `Developer mode` at the top right corner. This should bring up a row of buttons.
 4. Click `Load unpacked` and navigate to the folder where you saved your ZIP file.
