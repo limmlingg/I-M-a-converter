@@ -16,7 +16,7 @@ This little thing automatically converts measurements into commonly used units s
    1. Going to the [main page](https://github.com/limmlingg/Unit-Translator) of the repo.
    2. Click the green `Clone or download` button.
    3. Click `Download ZIP`.
-2. Using Google Chrome, go to the address bar and type `chrome://extension`.
+2. Using Google Chrome, go to the address bar and type `chrome://extensions`.
 3. Activate `Developer mode` at the top right corner. This should bring up a row of buttons.
 4. Click `Load unpacked` and navigate to the folder where you saved your ZIP file.
 
