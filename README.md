@@ -1,5 +1,7 @@
-# Unit Translator
-A chrome extension that automatically converts imperial units to metric and vice versa.
+# Hi human, I-M a converter!
+"I'll help you automatically convert those pesky measurements into your preferred units, be it imperial, metric or SI."
+
+"However, I-M still under development because I haven't learnt all the different units and type of measurements yet. Please stay tuned for my release!"
 
 ## Features
 
@@ -17,7 +19,7 @@ A chrome extension that automatically converts imperial units to metric and vice
   
 ### Nice-to-Haves
 * Some NLP to easily recognise units (likely using an NLP library), for example
-  * <f2ctag style="border-bottom: 2px solid #fea" title="30.00°F = -1.11°C = 272.04K"> 30 °F</f2ctag>
+  * 30 °F
   * thirty degrees fahrenheit
   * fahrenheit 30
   * 30° Fahrenheit

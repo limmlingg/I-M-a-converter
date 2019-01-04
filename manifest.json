@@ -1,7 +1,7 @@
 {
-	"name": "Fahrenheit to Celsius",
-	"version": "1.0",
-	"description": "Automatically converts all degrees Fahrenheit text to degrees Celsius when hovering over it",
+	"name": "I-M a converter!",
+	"version": "0.1",
+	"description": "I help you convert measurements from imperial to metric and vice versa!",
 	"permissions": ["storage"],
 	"content_scripts": [
 		{
